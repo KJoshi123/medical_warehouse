@@ -6,17 +6,21 @@ const Landing : React.FC = () => {
     const [message, setMessage] = useState("");
 
     useEffect(() => {
+        localStorage.setItem('login', 'false');
         createDB();
     }, []);
 
     const submitForm = async (e : any) => {
         e.preventDefault();
+        
         const result = await checkLogin(username,password);
         if(result){
             setMessage("login success");
+            localStorage.setItem('login','true');
         }
         else{
             setMessage("invalid creads");
+            localStorage.setItem('login', 'false');
         }
     }
     return (
