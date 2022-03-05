@@ -1,12 +1,11 @@
 import React from 'react';
 import Landing from './components/landing/landing';
+import Header from './components/Header/Header';
 
 function App() {
   return (
     <div className="App">
-      <header>
-        This is header
-      </header>
+      <Header />
       <Landing />
     </div>
   );
