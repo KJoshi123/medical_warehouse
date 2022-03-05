@@ -1,9 +1,12 @@
 import React,{useEffect,useState} from 'react';
 import { checkLogin, createDB} from '../../dexie/dexie';
+import {useNavigate} from "react-router-dom"
+
 const Landing : React.FC = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
+    let navigate = useNavigate();
 
     useEffect(() => {
         localStorage.setItem('login', 'false');
@@ -12,11 +15,11 @@ const Landing : React.FC = () => {
 
     const submitForm = async (e : any) => {
         e.preventDefault();
-        
         const result = await checkLogin(username,password);
         if(result){
             setMessage("login success");
             localStorage.setItem('login','true');
+            navigate("/home")
         }
         else{
             setMessage("invalid creads");
