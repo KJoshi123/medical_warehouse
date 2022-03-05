@@ -1,9 +1,11 @@
 import React from 'react';
+import './Header.css';
 
 const Header : React.FC = () => {
     return(
-        <div>
-            <h1>This is the header</h1>
+        <div className="HeaderClass">
+            <h1 className="headtext">The Warehouse</h1>
+            <button className="buttontext">Logout</button>
         </div>
     )
 }

@@ -1,0 +1,15 @@
+.HeaderClass {
+  font-family: monospace;
+  font-style: italic;
+  display: flex;
+  align-content: space-between;
+  flex-direction: column;
+}
+
+.hheadtext {
+  align-self: flex-end;
+}
+.buttontext {
+  font-family: monospace;
+  align-self: flex-end;
+}
